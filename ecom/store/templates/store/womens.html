@@ -1,5 +1,7 @@
 {% extends 'store/base.html' %}
 
+{% load static %}
+
 {% block title %}Women's Clothing{% endblock %}
 
 {% block content %}
@@ -14,6 +16,7 @@
     <div class="card-grid">
         {% for item in items %}
         <div class="card">
+            {% if item.image %}<img src="/media/{{ item.image }}" alt="{{ item.name }}" class="product-image">{% endif %}
             <h3>{{ item.name }}</h3>
             <p>{{ item.description }}</p>
             <p><strong>${{ item.price }}</strong></p>

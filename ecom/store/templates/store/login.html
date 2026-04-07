@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login – Ecom Shop</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f0e8de 0%, #e8dcc8 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('{% static "images/loginpage.jpeg" %}') center/cover no-repeat; background-color: #e8dcc8; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
         .login-container { background: #fff9f4; padding: 40px; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); width: 100%; max-width: 400px; border: 1px solid #f0e8de; }
         h1 { text-align: center; color: #5a4a42; margin-top: 0; font-size: 28px; }
         .form-group { margin-bottom: 20px; }

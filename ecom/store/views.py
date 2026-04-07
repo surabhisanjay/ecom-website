@@ -3,9 +3,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 WOMEN_ITEMS = [
-    {'id': 1, 'name': 'Summer Dress', 'description': 'Light and breezy summer dress', 'price': 45.99},
-    {'id': 2, 'name': 'Denim Jacket', 'description': 'Classic denim jacket', 'price': 79.99},
-    {'id': 3, 'name': 'Casual Blouse', 'description': 'Comfortable everyday blouse', 'price': 39.99},
+    {'id': 1, 'name': 'Summer Dress', 'description': 'Light and breezy summer dress', 'price': 45.99, 'image': 'products/summer_dress.jpeg'},
+    {'id': 2, 'name': 'Denim Jacket', 'description': 'Classic denim jacket', 'price': 79.99,'image': 'products/denim_jacket.jpeg'},
+    {'id': 3, 'name': 'Casual Blouse', 'description': 'Comfortable everyday blouse', 'price': 39.99,'image': 'products/casual_blouse.jpeg'},
 ]
 
 MEN_ITEMS = [
