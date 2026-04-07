@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Welcome – Ecom Shop{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to Ecom Shop</h1>
+    <p>Browse women's clothing, men's clothing, manage your cart, and sign in to a simple fashion storefront built with Django.</p>
+    <p>
+        <a class="button" href="{% url 'women' %}">Women's Clothing</a>
+        <a class="button button-secondary" href="{% url 'men' %}">Men's Clothing</a>
+    </p>
+</div>
+{% endblock %}

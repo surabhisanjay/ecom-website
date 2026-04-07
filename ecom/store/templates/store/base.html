@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ecom Shop{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #faf7f2; color: #5a4a42; }
+        header { background: #e8dcc8; color: #5a4a42; padding: 16px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        header nav a { color: #5a4a42; margin-right: 16px; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        header nav a:hover { color: #c9a87c; }
+        .container { max-width: 1100px; margin: 24px auto; padding: 0 18px; }
+        .hero { background: #fff9f4; padding: 24px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 24px; }
+        .card { background: #fff; padding: 18px; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); border: 1px solid #f0e8de; }
+        .card h3 { margin-top: 0; color: #5a4a42; }
+        .button { display: inline-block; padding: 10px 16px; background: #d4a574; color: #fff; text-decoration: none; border-radius: 6px; transition: background 0.3s; }
+        .button:hover { background: #c9957a; }
+        .button-secondary { background: #c9a87c; }
+        .button-secondary:hover { background: #b89865; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #5a4a42; font-weight: 500; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #dcc9b3; border-radius: 6px; background: #fffbf7; }
+        table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+        th, td { padding: 12px 10px; border-bottom: 1px solid #ebe5dc; text-align: left; }
+        th { background: #f0e8de; color: #5a4a42; font-weight: 600; }
+        footer { padding: 18px 24px; text-align: center; color: #8b7355; background: #f0e8de; }
+        .message { margin-top: 16px; padding: 14px; border: 1px solid #e8d4c4; background: #fef5f0; color: #7a5c4e; border-radius: 6px; }
+        .message.success { background: #f0e8d8; color: #6b7c4a; border-color: #dcc9b3; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'women' %}">Women</a>
+            <a href="{% url 'men' %}">Men</a>
+            <a href="{% url 'cart' %}">Cart</a>
+            <a href="{% url 'login' %}">Login</a>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        Ecom Shop • Simple Django storefront
+    </footer>
+</body>
+</html>

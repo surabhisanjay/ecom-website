@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Ecom Shop</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f0e8de 0%, #e8dcc8 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login-container { background: #fff9f4; padding: 40px; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); width: 100%; max-width: 400px; border: 1px solid #f0e8de; }
+        h1 { text-align: center; color: #5a4a42; margin-top: 0; font-size: 28px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #5a4a42; font-weight: 500; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #dcc9b3; border-radius: 6px; font-size: 14px; box-sizing: border-box; background: #fffbf7; color: #5a4a42; }
+        .form-group input:focus { outline: none; border-color: #d4a574; box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1); }
+        .button { width: 100%; padding: 12px; background: #d4a574; color: #fff; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
+        .button:hover { background: #c9957a; }
+        .message { margin-bottom: 16px; padding: 12px; border-radius: 6px; }
+        .message.success { background: #f0e8d8; color: #6b7c4a; border: 1px solid #dcc9b3; }
+        .message.error { background: #fef5f0; color: #9a6b5e; border: 1px solid #e8d4c4; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Ecom Shop</h1>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="button" type="submit">Sign In</button>
+        </form>
+    </div>
+</body>
+</html>

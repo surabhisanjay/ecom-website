@@ -1,0 +1,25 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Men's Clothing{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Men's Clothing</h1>
+    <p>Browse our men’s collection with shirts, jackets, and pants.</p>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <div class="card-grid">
+        {% for item in items %}
+        <div class="card">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p><strong>${{ item.price }}</strong></p>
+            <a class="button" href="{% url 'add_to_cart' item.id 'men' %}">Add to Cart</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
