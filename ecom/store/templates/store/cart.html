@@ -30,6 +30,7 @@
             </tbody>
         </table>
         <p><strong>Total: ${{ total|floatformat:2 }}</strong></p>
+        <a href="{% url 'checkout' %}" class="button">Proceed to Checkout</a>
     {% else %}
         <p>Your cart is empty. Browse <a href="{% url 'women' %}">women's</a> or <a href="{% url 'men' %}">men's</a> clothing.</p>
     {% endif %}

@@ -1,27 +1,20 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from decimal import Decimal
+from .models import Product, Order, OrderItem
 
-WOMEN_ITEMS = [
-    {'id': 1, 'name': 'Summer Dress', 'description': 'Light and breezy summer dress', 'price': 45.99, 'image': 'products/summer_dress.jpeg'},
-    {'id': 2, 'name': 'Denim Jacket', 'description': 'Classic denim jacket', 'price': 79.99,'image': 'products/denim_jacket.jpeg'},
-    {'id': 3, 'name': 'Casual Blouse', 'description': 'Comfortable everyday blouse', 'price': 39.99,'image': 'products/casual_blouse.jpeg'},
-]
-
-MEN_ITEMS = [
-    {'id': 1, 'name': 'Polo Shirt', 'description': 'Classic polo shirt', 'price': 34.99},
-    {'id': 2, 'name': 'Canvas Jacket', 'description': 'Durable canvas jacket', 'price': 89.99},
-    {'id': 3, 'name': 'Chino Pants', 'description': 'Comfortable chino pants', 'price': 54.99},
-]
 
 def home(request):
     return render(request, 'store/home.html')
 
 def womens_clothing(request):
-    return render(request, 'store/womens.html', {'items': WOMEN_ITEMS})
+    items = Product.objects.filter(category='women')
+    return render(request, 'store/womens.html', {'items': items})
 
 def mens_clothing(request):
-    return render(request, 'store/mens.html', {'items': MEN_ITEMS})
+    items = Product.objects.filter(category='men')
+    return render(request, 'store/mens.html', {'items': items})
 
 def login_page(request):
     if request.method == 'POST':
@@ -39,14 +32,20 @@ def add_to_cart(request, item_id, category):
     if 'cart' not in request.session:
         request.session['cart'] = []
     
-    items = WOMEN_ITEMS if category == 'women' else MEN_ITEMS
-    item = next((i for i in items if i['id'] == item_id), None)
-    
-    if item:
-        cart_item = {'id': item_id, 'name': item['name'], 'price': item['price'], 'qty': 1, 'category': category}
+    try:
+        product = Product.objects.get(id=item_id, category=category)
+        cart_item = {
+            'id': product.id,
+            'name': product.name,
+            'price': float(product.price),
+            'qty': 1,
+            'category': category
+        }
         request.session['cart'].append(cart_item)
         request.session.modified = True
-        messages.success(request, f'{item["name"]} added to cart!')
+        messages.success(request, f'{product.name} added to cart!')
+    except Product.DoesNotExist:
+        messages.error(request, 'Product not found.')
     
     return redirect('cart')
 
@@ -60,3 +59,56 @@ def cart_page(request):
     cart = request.session.get('cart', [])
     total = sum(item['price'] * item['qty'] for item in cart)
     return render(request, 'store/cart.html', {'cart': cart, 'total': total})
+
+def checkout_page(request):
+    cart = request.session.get('cart', [])
+    
+    if not cart:
+        messages.error(request, 'Your cart is empty!')
+        return redirect('cart')
+    
+    if request.method == 'POST':
+        full_name = request.POST.get('full_name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        postal_code = request.POST.get('postal_code')
+        
+        if full_name and email and phone and address and city and postal_code:
+            total = sum(item['price'] * item['qty'] for item in cart)
+            
+            # Create order
+            order = Order.objects.create(
+                full_name=full_name,
+                email=email,
+                phone=phone,
+                address=address,
+                city=city,
+                postal_code=postal_code,
+                total_amount=Decimal(str(total)),
+                status='confirmed'
+            )
+            
+            # Create order items
+            for item in cart:
+                try:
+                    product = Product.objects.get(id=item['id'])
+                    OrderItem.objects.create(
+                        order=order,
+                        product=product,
+                        quantity=item['qty'],
+                        price=Decimal(str(item['price']))
+                    )
+                except Product.DoesNotExist:
+                    pass
+            
+            messages.success(request, f'Thank you {full_name}! Order #{order.id} placed successfully. Total: ${total:.2f}')
+            request.session['cart'] = []
+            request.session.modified = True
+            return redirect('shop')
+        else:
+            messages.error(request, 'Please fill in all fields.')
+    
+    total = sum(item['price'] * item['qty'] for item in cart)
+    return render(request, 'store/checkout.html', {'cart': cart, 'total': total})
