@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login – Ecom Shop</title>
+    <title>Login – Online Thrift Store</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('{% static "images/loginpage.jpeg" %}') center/cover no-repeat; background-color: #e8dcc8; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+     body {
+    margin: 0;
+    height: 100vh;
+
+    background: url("{% static 'images/products/loginpage.jpeg' %}") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
         .login-container { background: #fff9f4; padding: 40px; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.08); width: 100%; max-width: 400px; border: 1px solid #f0e8de; }
         h1 { text-align: center; color: #5a4a42; margin-top: 0; font-size: 28px; }
         .form-group { margin-bottom: 20px; }
@@ -21,7 +30,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Ecom Shop</h1>
+        <h1>Online Thrift Store</h1>
         {% if messages %}
             {% for message in messages %}
                 <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
