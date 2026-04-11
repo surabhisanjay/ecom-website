@@ -1,0 +1,236 @@
+[
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "name": "Olive Green Satin Dress",
+    "description": "Classic Satin dinner party dress",
+    "price": "59.99",
+    "category": "women",
+    "image": "products/women_1_7CPfzZ3.jpg",
+    "created_at": "2026-04-10T13:04:24.626Z",
+    "updated_at": "2026-04-11T05:38:11.245Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 5,
+  "fields": {
+    "name": "Long Sleeved Blazer",
+    "description": "Linen Blend for Daily wear",
+    "price": "79.99",
+    "category": "women",
+    "image": "products/women_7_tbFayFV.jpg",
+    "created_at": "2026-04-11T05:26:19.617Z",
+    "updated_at": "2026-04-11T05:26:19.617Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 6,
+  "fields": {
+    "name": "Ivory Lunch Dress",
+    "description": "Paisley pattern made of Linen cotton blend",
+    "price": "29.99",
+    "category": "women",
+    "image": "products/women_3_fOASBNy.jpg",
+    "created_at": "2026-04-11T05:27:19.680Z",
+    "updated_at": "2026-04-11T05:27:19.680Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 7,
+  "fields": {
+    "name": "Yellow Tie-up Top",
+    "description": "Rayon Blend sleeveless free size top",
+    "price": "14.99",
+    "category": "women",
+    "image": "products/women_9_7lF2TBe.jpg",
+    "created_at": "2026-04-11T05:30:05.134Z",
+    "updated_at": "2026-04-11T05:30:05.134Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 8,
+  "fields": {
+    "name": "Casual White Combo",
+    "description": "Fitted vest top in ribbed cotton jersey with fitted jumpsuit",
+    "price": "49.99",
+    "category": "women",
+    "image": "products/women_2_m8eodh7.jpg",
+    "created_at": "2026-04-11T05:31:43.502Z",
+    "updated_at": "2026-04-11T05:31:43.502Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 9,
+  "fields": {
+    "name": "White cover up",
+    "description": "Mesh material tie around cover up",
+    "price": "24.99",
+    "category": "women",
+    "image": "products/women_8_U4IQXpA.jpg",
+    "created_at": "2026-04-11T05:32:40.214Z",
+    "updated_at": "2026-04-11T05:32:40.214Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 10,
+  "fields": {
+    "name": "Fur Winter coat",
+    "description": "Short length full sleeved green fur coat",
+    "price": "79.99",
+    "category": "women",
+    "image": "products/women_5_hxXYnxZ.jpg",
+    "created_at": "2026-04-11T05:34:22.894Z",
+    "updated_at": "2026-04-11T05:34:22.894Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 11,
+  "fields": {
+    "name": "Brown Daily wear combo",
+    "description": "Comes with one fitted tank top, linen shorts and mesh cover up",
+    "price": "79.99",
+    "category": "women",
+    "image": "products/women_6_78BI1Td.jpg",
+    "created_at": "2026-04-11T05:35:42.915Z",
+    "updated_at": "2026-04-11T05:35:42.916Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 12,
+  "fields": {
+    "name": "Yellow Beach dress",
+    "description": "Tie Strap cotton dress",
+    "price": "19.99",
+    "category": "women",
+    "image": "products/women_4_qiEEN4C.jpg",
+    "created_at": "2026-04-11T05:37:20.371Z",
+    "updated_at": "2026-04-11T05:37:20.371Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 13,
+  "fields": {
+    "name": "Corduroy Jacket",
+    "description": "Cotton Corduroy blend, Two colour options available",
+    "price": "59.99",
+    "category": "men",
+    "image": "products/men_8_XhY9lOn.jpg",
+    "created_at": "2026-04-11T05:49:06.302Z",
+    "updated_at": "2026-04-11T05:49:06.302Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 14,
+  "fields": {
+    "name": "Ivory Shirt",
+    "description": "Rayon Blend Ivory shirt with black lining",
+    "price": "14.99",
+    "category": "men",
+    "image": "products/men_3_UrT8umS.jpg",
+    "created_at": "2026-04-11T05:51:56.898Z",
+    "updated_at": "2026-04-11T05:51:56.898Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 15,
+  "fields": {
+    "name": "Emerald Green Pullover",
+    "description": "Wool and polyester blend sweater",
+    "price": "19.99",
+    "category": "men",
+    "image": "products/men_9_786FzER.jpg",
+    "created_at": "2026-04-11T05:53:24.925Z",
+    "updated_at": "2026-04-11T05:53:24.925Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 16,
+  "fields": {
+    "name": "Formal Daily-Wear Combo",
+    "description": "Linen Blend combo comes with - Shirt, Trousers and Blazer",
+    "price": "75.00",
+    "category": "men",
+    "image": "products/men_7_KeIjJpU.jpg",
+    "created_at": "2026-04-11T05:54:38.661Z",
+    "updated_at": "2026-04-11T05:54:38.662Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 17,
+  "fields": {
+    "name": "Button Down Shirt Pack",
+    "description": "combo comes with - 4 Linen shirts",
+    "price": "49.99",
+    "category": "men",
+    "image": "products/men_6_MtbpVev.jpg",
+    "created_at": "2026-04-11T05:56:21.822Z",
+    "updated_at": "2026-04-11T05:56:21.822Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 18,
+  "fields": {
+    "name": "Off-White Shirt",
+    "description": "Linen Rayon Blend Formal Shirt for Daily Wear",
+    "price": "19.99",
+    "category": "men",
+    "image": "products/men_5_ZLJiY1b.jpg",
+    "created_at": "2026-04-11T05:57:49.696Z",
+    "updated_at": "2026-04-11T05:57:49.696Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 19,
+  "fields": {
+    "name": "Khaki Jacket",
+    "description": "Tan self design open front jacket",
+    "price": "55.00",
+    "category": "men",
+    "image": "products/men_4_xQzieGk.jpg",
+    "created_at": "2026-04-11T05:59:06.135Z",
+    "updated_at": "2026-04-11T05:59:06.135Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 20,
+  "fields": {
+    "name": "Short Sleeved Shirt",
+    "description": "Silk Cottom blend red Shirt",
+    "price": "29.99",
+    "category": "men",
+    "image": "products/men_2_cP2ocED.jpg",
+    "created_at": "2026-04-11T06:00:39.189Z",
+    "updated_at": "2026-04-11T06:00:39.189Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 21,
+  "fields": {
+    "name": "Collared Jacket",
+    "description": "Jacket in a cotton weave with a collar",
+    "price": "49.99",
+    "category": "men",
+    "image": "products/men_1_BLffj8r.jpg",
+    "created_at": "2026-04-11T06:01:56.537Z",
+    "updated_at": "2026-04-11T06:01:56.537Z"
+  }
+}
+]
