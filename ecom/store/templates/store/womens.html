@@ -5,9 +5,23 @@
 {% block title %}Women's Clothing{% endblock %}
 
 {% block content %}
+<style>
+    .mybutton { 
+        display: inline-block; 
+        padding: 16px 20px; 
+        background: #a09993; 
+        color: #0d0909; 
+        text-decoration: none; 
+        border-radius: 12px; 
+        transition: background 0.3s;
+        font-size: 16px;
+        font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif; }
+        .mybutton:hover { background: #c9957a; }
+</style>
 <div class="hero">
-    <h1>Women's Clothing</h1>
-    <p>Discover curated women's fashion tops, dresses, and outerwear.</p>
+    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 1cm;">WOMEN'S CLOTHING</h1>
+    <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: 0.6cm;">Discover curated women's fashion tops, dresses, and outerwear.</p>
     {% if messages %}
         {% for message in messages %}
             <div class="message success">{{ message }}</div>
@@ -17,10 +31,10 @@
         {% for item in items %}
         <div class="card">
             {% if item.image %}<img src="/media/{{ item.image }}" alt="{{ item.name }}" class="product-image">{% endif %}
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
+            <h3 style="font-family: 'Times New Roman', Times, serif;">{{ item.name }}</h3>
+            <p style="font-family: Arial, Helvetica, sans-serif;">{{ item.description }}</p>
             <p><strong>${{ item.price }}</strong></p>
-            <a class="button" href="{% url 'add_to_cart' item.id 'women' %}">Add to Cart</a>
+            <a class="mybutton" href="{% url 'add_to_cart' item.id 'women' %}">Add to Cart</a>
         </div>
         {% endfor %}
     </div>

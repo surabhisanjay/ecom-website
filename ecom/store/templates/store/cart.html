@@ -3,8 +3,22 @@
 {% block title %}Shopping Cart{% endblock %}
 
 {% block content %}
+<style>
+    .mybutton { 
+        display: inline-block; 
+        padding: 16px 20px; 
+        background: #a09993; 
+        color: #0d0909; 
+        text-decoration: none; 
+        border-radius: 12px; 
+        transition: background 0.3s;
+        font-size: 16px;
+        font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif; }
+        .mybutton:hover { background: #c9957a; }
+</style>
 <div class="hero">
-    <h1>Your Cart</h1>
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Your Cart</h1>
     {% if messages %}
         {% for message in messages %}
             <div class="message success">{{ message }}</div>
@@ -22,7 +36,10 @@
             <tbody>
                 {% for item in cart %}
                 <tr>
-                    <td>{{ item.name }}</td>
+                    <td>
+                        {% if item.image %}<img src="/media/{{ item.image }}" alt="{{ item.name }}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; border-radius: 4px;">{% endif %}
+                        {{ item.name }}
+                    </td>
                     <td>${{ item.price }}</td>
                     <td><a href="{% url 'remove_from_cart' item.id %}" style="color: #d32f2f; text-decoration: none;">Remove</a></td>
                 </tr>
@@ -30,7 +47,7 @@
             </tbody>
         </table>
         <p><strong>Total: ${{ total|floatformat:2 }}</strong></p>
-        <a href="{% url 'checkout' %}" class="button">Proceed to Checkout</a>
+        <a href="{% url 'checkout' %}" class="mybutton">Proceed to Checkout</a>
     {% else %}
         <p>Your cart is empty. Browse <a href="{% url 'women' %}">women's</a> or <a href="{% url 'men' %}">men's</a> clothing.</p>
     {% endif %}
