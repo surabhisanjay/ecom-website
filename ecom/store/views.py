@@ -84,7 +84,8 @@ def add_to_cart(request, item_id, category):
             'name': product.name,
             'price': float(product.price),
             'qty': 1,
-            'category': category
+            'category': category,
+            'image': str(product.image) if product.image else None
         }
         request.session['cart'].append(cart_item)
         request.session.modified = True
